@@ -1,5 +1,5 @@
-# my-first-react-app
+# Speed Typing Game
 
-This was me testing React App for the first time. Also testing pushing to git through the terminal. 
+Built in React
 
-[Link](https://compassionate-spence-ed48c9.netlify.app)
+[Link]()
