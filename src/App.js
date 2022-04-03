@@ -1,14 +1,53 @@
-import Hey from "./Hey"
+import React, {useState} from "react"
+import useWordGame from "./hooks/useWordGame"
+import { FaWind, FaRunning } from 'react-icons/fa'
 
 function App() {
+  const [gameTime, setGameTime] = useState(0)
+  
+  const {
+    textBoxRef, 
+    handleChange, 
+    text, 
+    isTimeRunning, 
+    timeRemaining, 
+    startGame, 
+    wordCount
+} = useWordGame(gameTime)
+  
+  const handleGameTime = e => setGameTime(e.target.value)
+
   return (
     <div className="container">
-      <h1>Hello React World!</h1>
-      <p>This is my first time playing around with React App.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-      <p>Lets do this!</p>
-      <Hey />
-    </div>
+      <h1><FaWind className="icon wind"/><FaRunning className="icon"/>speed typing</h1>
+      <textarea
+          ref={textBoxRef}
+          onChange={handleChange}
+          value={text}
+          disabled={!isTimeRunning}
+      />
+      {isTimeRunning
+        ? <div className="stats">
+            <h4>Time remaining: {timeRemaining}</h4>
+          </div>
+        : <div className="game-time-input">
+            <h4>Enter seconds:</h4>
+            <input 
+              type="number"
+              min="1"
+              name={gameTime}
+              value={gameTime}
+              onChange={handleGameTime}
+            />
+          </div>}
+      <button 
+          onClick={startGame}
+          disabled={isTimeRunning}
+      >
+          Start
+      </button>
+      <h4>Word count: {wordCount}</h4>
+  </div>
   );
 }
 
