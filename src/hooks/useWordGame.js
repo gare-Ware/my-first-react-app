@@ -38,7 +38,7 @@ function useWordGame(startingTime = 10) {
         } else if(timeRemaining === 0) {
             endGame()
         }
-    }, [timeRemaining, isTimeRunning]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [timeRemaining, isTimeRunning]) 
     
     return {textBoxRef, handleChange, text, isTimeRunning, timeRemaining, startGame, wordCount}
 }

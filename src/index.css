@@ -99,6 +99,11 @@ button:disabled {
   cursor: not-allowed;
   opacity: .8;
 }
+button:disabled:hover {
+  transform: none;
+  color: #9fa9db;
+  background-color: #242424;
+}
 button:hover {
   color: salmon;
   background-color: #1a1a1a;

@@ -42,7 +42,7 @@ function App() {
           </div>}
       <button 
           onClick={startGame}
-          disabled={isTimeRunning}
+          disabled={isTimeRunning || gameTime ===0}
       >
           Start
       </button>
