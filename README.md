@@ -2,4 +2,4 @@
 
 Built in React
 
-[Link](https://compassionate-spence-ed48c9.netlify.app/)
+[Link](https://gk-speedtyping.netlify.app/)
