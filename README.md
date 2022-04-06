@@ -1,6 +1,6 @@
 # Speed Typing Game
 
-A stylish and fun speed typing game with user input for time limit.
+A stylish and fun timed typing game with user input for time limit.
 
 **Link to project:** https://gk-speedtyping.netlify.app/
 
